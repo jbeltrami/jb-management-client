@@ -13,8 +13,26 @@ const onAddService = function (event) {
     .catch(ui.addServiceFailure)
 }
 
+const onGetService = function (event) {
+  const data = getFormFields(event.target)
+  event.preventDefault()
+  api.getService(data)
+    .then(ui.getServiceSuccess)
+    .catch(ui.getServiceFailure)
+}
+
+const onGetServiceIndex = function (event) {
+  const data = getFormFields(event.target)
+  event.preventDefault()
+  api.getServiceIndex(data)
+    .then(ui.getServiceIndexSuccess)
+    .catch(ui.getServiceIndexFailure)
+}
+
 const addHandlers = () => {
   $('#add-service').on('submit', onAddService)
+  $('#get-service').on('submit', onGetService)
+  $('#get-service-index').on('submit', onGetServiceIndex)
 }
 
 module.exports = {

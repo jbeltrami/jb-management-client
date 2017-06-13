@@ -18,23 +18,19 @@
     <form id="sign-up">
       <fieldset>
         <legend>Sign up!</legend>
-        <form>
-          <input name="credentials[email]" type="text" placeholder="an@example.email">
-          <input name="credentials[password]" type="password" placeholder="password">
-          <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
-          <input type="submit" name="submit" value="Sign up!">
-        </form>
+        <input name="credentials[email]" type="text" placeholder="an@example.email">
+        <input name="credentials[password]" type="password" placeholder="password">
+        <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+        <input type="submit" name="submit" value="Sign up!">
       </fieldset>
     </form>
 
     <form id="sign-in">
       <fieldset>
         <legend>Sign in!</legend>
-        <form>
-          <input name="credentials[email]" type="text" placeholder="an@example.email">
-          <input name="credentials[password]" type="password" placeholder="password">
-          <input type="submit" name="submit" value="Sign in!">
-        </form>
+        <input name="credentials[email]" type="text" placeholder="an@example.email">
+        <input name="credentials[password]" type="password" placeholder="password">
+        <input type="submit" name="submit" value="Sign in!">
       </fieldset>
     </form>
 
@@ -57,63 +53,64 @@
 
   <div class="client-stuff">
     <form id="add-client">
-        <legend>Add client</legend>
-        <form>
-          <input name="client[first_name]" type="text" placeholder="First Name">
-          <input name="client[family_name]" type="text" placeholder="Family Name">
-          <input name="client[born_on]" type="date" placeholder="DOB yyyy/mm/dd">
-          <input name="client[email]" type="text" placeholder="email">
-          <input type="submit" name="submit" value="Add client!">
-        </form>
+      <legend>Add client</legend>
+      <input name="client[first_name]" type="text" placeholder="First Name">
+      <input name="client[family_name]" type="text" placeholder="Family Name">
+      <input name="client[born_on]" type="date" placeholder="DOB yyyy/mm/dd">
+      <input name="client[email]" type="text" placeholder="email">
+      <input type="submit" name="submit" value="Add client!">
     </form>
 
     <form id="get-client">
-        <legend>Get client</legend>
-        <form>
-          <input name="client[id]" type="text" placeholder="Client ID">
-          <input type="submit" name="submit" value="Get client!">
-        </form>
+      <legend>Get client</legend>
+      <input name="client[id]" type="text" placeholder="Client ID">
+      <input type="submit" name="submit" value="Get client!">
     </form>
 
     <form id="get-client-index">
-        <legend>Get all clients</legend>
-        <form>
-          <input type="submit" name="submit" value="Get all clients!">
-        </form>
+      <legend>Get all clients</legend>
+      <input type="submit" name="submit" value="Get all clients!">
     </form>
 
     <form id="update-client">
-        <legend>Update client</legend>
-        <form>
-          <input name="client[id]" type="text" placeholder="Client ID">
-          <input name="client[first_name]" type="text" placeholder="First Name">
-          <input name="client[family_name]" type="text" placeholder="Family Name">
-          <input name="client[born_on]" type="date" placeholder="DOB yyyy/mm/dd">
-          <input name="client[email]" type="text" placeholder="email">
-          <input type="submit" name="submit" value="Update client!">
-        </form>
+      <legend>Update client</legend>
+      <input name="client[id]" type="text" placeholder="Client ID">
+      <input name="client[first_name]" type="text" placeholder="First Name">
+      <input name="client[family_name]" type="text" placeholder="Family Name">
+      <input name="client[born_on]" type="date" placeholder="DOB yyyy/mm/dd">
+      <input name="client[email]" type="text" placeholder="email">
+      <input type="submit" name="submit" value="Update client!">
     </form>
 
     <form id="destroy-client">
-        <legend>Remove client</legend>
-        <form>
-          <input name="client[id]" type="text" placeholder="Client ID">
-          <input type="submit" name="submit" value="Remove client!">
-        </form>
+      <legend>Remove client</legend>
+      <input name="client[id]" type="text" placeholder="Client ID">
+      <input type="submit" name="submit" value="Remove client!">
     </form>
   </div>
 
   <div class='service-stuff'>
     <form id="add-service">
-        <legend>Add service</legend>
-        <form>
-          <input name="service[client_id]" type="text" placeholder="Client ID">
-          <input name="service[description]" type="text" placeholder="Service description">
-          <input name="service[service_date]" type="date" placeholder="Date of the service">
-          <input name="service[price]" type="number" step='0.10' placeholder="Service Price">
-          <input type="submit" name="submit" value="Add service!">
-        </form>
+      <legend>Add service</legend>
+      <input name="service[client_id]" type="text" placeholder="Client ID">
+      <input name="service[description]" type="text" placeholder="Service description">
+      <input name="service[service_date]" type="date" placeholder="Date of the service">
+      <input name="service[price]" type="number" step='0.10' placeholder="Service Price">
+      <input type="submit" name="submit" value="Add service!">
     </form>
+
+    <form id="get-service">
+      <legend>Get service</legend>
+      <input name="service[client_id]" type="text" placeholder="Client ID">
+      <input name="service[id]" type="text" placeholder="Service ID">
+      <input type="submit" name="submit" value="Get service!">
+    </form>
+
+    <form id="get-service-index">
+      <legend>Get services</legend>
+      <input type="submit" name="submit" value="Get all services!">
+    </form>
+
   </div>
 
 </body>

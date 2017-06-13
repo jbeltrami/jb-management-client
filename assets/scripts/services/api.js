@@ -14,6 +14,29 @@ const addService = (data) => {
   })
 }
 
+const getService = (data) => {
+  console.log(data)
+  return $.ajax({
+    url: config.apiOrigin + '/services/' + data.service.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const getServiceIndex = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/services/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  addService
+  addService,
+  getService,
+  getServiceIndex
 }
