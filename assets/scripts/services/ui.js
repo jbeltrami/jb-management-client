@@ -41,6 +41,15 @@ const updateServiceFailure = (data) => {
   console.log(data)
   resetFields()
 }
+const destroyServiceSuccess = (data) => {
+  console.log(data)
+  resetFields()
+}
+
+const destroyServiceFailure = (data) => {
+  console.log(data)
+  resetFields()
+}
 
 module.exports = {
   addServiceSuccess,
@@ -50,5 +59,7 @@ module.exports = {
   getServiceIndexSuccess,
   getServiceIndexFailure,
   updateServiceSuccess,
-  updateServiceFailure
+  updateServiceFailure,
+  destroyServiceSuccess,
+  destroyServiceFailure
 }

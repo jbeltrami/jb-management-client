@@ -46,9 +46,21 @@ const updateService = (data) => {
   })
 }
 
+const destroyService = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/services/' + data.service.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   addService,
   getService,
   getServiceIndex,
-  updateService
+  updateService,
+  destroyService
 }

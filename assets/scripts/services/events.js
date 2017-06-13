@@ -37,11 +37,20 @@ const onUpdateService = function (event) {
     .catch(ui.updateServiceFailure)
 }
 
+const onDestroyService = function (event) {
+  const data = getFormFields(event.target)
+  event.preventDefault()
+  api.destroyService(data)
+    .then(ui.destroyServiceSuccess)
+    .catch(ui.destroyServiceFailure)
+}
+
 const addHandlers = () => {
   $('#add-service').on('submit', onAddService)
   $('#get-service').on('submit', onGetService)
   $('#get-service-index').on('submit', onGetServiceIndex)
   $('#update-service').on('submit', onUpdateService)
+  $('#destroy-service').on('submit', onDestroyService)
 }
 
 module.exports = {
