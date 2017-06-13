@@ -1,7 +1,5 @@
 'use strict'
 
-const store = require('../store.js')
-
 const resetFields = function () {
   document.getElementById('sign-up').reset()
   document.getElementById('sign-in').reset()
@@ -14,47 +12,55 @@ const resetFields = function () {
   document.getElementById('destroy-client').reset()
 }
 
-const signUpSuccess = (data) => {
+const addClientSuccess = (data) => {
   resetFields()
 }
 
-const signUpFailure = (data) => {
+const addClientFailure = (data) => {
   resetFields()
 }
 
-// makes all the buttons appear.
-const signInSuccess = (data) => {
-  resetFields()
-  store.user = data.user
-}
-
-const signInFailure = (data) => {
+const getClientSuccess = (data) => {
   resetFields()
 }
 
-const changePWSuccess = (data) => {
+const getClientFailure = (data) => {
   resetFields()
 }
 
-const changePWFailure = (data) => {
+const getClientIndexSuccess = (data) => {
   resetFields()
 }
 
-const signOutSuccess = (data) => {
+const getClientIndexFailure = (data) => {
   resetFields()
 }
 
-const signOutFailure = (data) => {
+const updateClientSuccess = (data) => {
+  resetFields()
+}
+
+const updateClientFailure = (data) => {
+  resetFields()
+}
+
+const destroyClientSuccess = (data) => {
+  resetFields()
+}
+
+const destroyClientFailure = (data) => {
   resetFields()
 }
 
 module.exports = {
-  signUpSuccess,
-  signUpFailure,
-  signInSuccess,
-  signInFailure,
-  changePWSuccess,
-  changePWFailure,
-  signOutSuccess,
-  signOutFailure
+  addClientSuccess,
+  addClientFailure,
+  getClientSuccess,
+  getClientFailure,
+  getClientIndexSuccess,
+  getClientIndexFailure,
+  updateClientSuccess,
+  updateClientFailure,
+  destroyClientSuccess,
+  destroyClientFailure
 }
