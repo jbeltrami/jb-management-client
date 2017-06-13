@@ -15,7 +15,6 @@ const addClient = (data) => {
 }
 
 const getClient = (data) => {
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/clients/' + data.client.id,
     method: 'GET',
@@ -26,7 +25,6 @@ const getClient = (data) => {
 }
 
 const getClientIndex = (data) => {
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/clients/',
     method: 'GET',
@@ -37,7 +35,6 @@ const getClientIndex = (data) => {
 }
 
 const updateClient = (data) => {
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/clients/' + data.client.id,
     method: 'PATCH',
@@ -49,7 +46,6 @@ const updateClient = (data) => {
 }
 
 const destroyClient = (data) => {
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/clients/' + data.client.id,
     method: 'DELETE',
