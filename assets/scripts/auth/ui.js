@@ -24,27 +24,33 @@ const signUpFailure = (data) => {
 
 // makes all the buttons appear.
 const signInSuccess = (data) => {
-  resetFields()
+  console.log(data)
   store.user = data.user
+  resetFields()
 }
 
 const signInFailure = (data) => {
+  console.log(data)
   resetFields()
 }
 
 const changePWSuccess = (data) => {
+  console.log(data)
   resetFields()
 }
 
 const changePWFailure = (data) => {
+  console.log(data)
   resetFields()
 }
 
 const signOutSuccess = (data) => {
+  console.log(data)
   resetFields()
 }
 
 const signOutFailure = (data) => {
+  console.log(data)
   resetFields()
 }
 

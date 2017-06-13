@@ -101,7 +101,19 @@
           <input type="submit" name="submit" value="Remove client!">
         </form>
     </form>
+  </div>
 
+  <div class='service-stuff'>
+    <form id="add-service">
+        <legend>Add service</legend>
+        <form>
+          <input name="service[client_id]" type="text" placeholder="Client ID">
+          <input name="service[description]" type="text" placeholder="Service description">
+          <input name="service[service_date]" type="date" placeholder="Date of the service">
+          <input name="service[price]" type="number" step='0.10' placeholder="Service Price">
+          <input type="submit" name="submit" value="Add service!">
+        </form>
+    </form>
   </div>
 
 </body>
