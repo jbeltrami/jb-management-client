@@ -14,62 +14,96 @@
 </head>
 
 <body class="container-fluid">
-  <div class="sign-in-screen">
-      <form id="sign-in">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Username</label>
-          <input name="credentials[email]" type="text" placeholder="Username" class="form-control reset">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input name="credentials[password]" type="password" placeholder="password" class="form-control reset">
-        </div>
-        <input type="submit" class="btn btn-default" name="submit" value="Sign in">
-      </form>
-      <br/>
-      <div class="alternative-buttons">
-        <button class="btn btn-default create-account" type="submit">Create an account</button><br/><br/>
-      </div>
-    </div>
+  <div class="auth-stuff">
+    <form id="sign-up">
+      <fieldset>
+        <legend>Sign up!</legend>
+        <form>
+          <input name="credentials[email]" type="text" placeholder="an@example.email">
+          <input name="credentials[password]" type="password" placeholder="password">
+          <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+          <input type="submit" name="submit" value="Sign up!">
+        </form>
+      </fieldset>
+    </form>
 
-    <div class="sign-up-screen">
-      <form id="sign-up">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Username</label>
-          <input name="credentials[email]" type="text" placeholder="Create a username" class="form-control reset">
-        </div>
+    <form id="sign-in">
+      <fieldset>
+        <legend>Sign in!</legend>
+        <form>
+          <input name="credentials[email]" type="text" placeholder="an@example.email">
+          <input name="credentials[password]" type="password" placeholder="password">
+          <input type="submit" name="submit" value="Sign in!">
+        </form>
+      </fieldset>
+    </form>
 
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input name="credentials[password]" type="password" placeholder="password" class="form-control reset">
-        </div>
+    <form id="changepw">
+      <fieldset>
+        <legend>Change password!</legend>
+        <input type="password" name="passwords[old]" placeholder="old password">
+        <input type="password" name="passwords[new]" placeholder="new password">
+        <input type="submit" name="submit" value="Change password!">
+      </fieldset>
+    </form>
 
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password Confirmation</label>
-          <input name="credentials[password]" type="password" placeholder="password" class="form-control reset">
-        </div>
+    <form id="sign-out">
+      <fieldset>
+        <legend>Sign-out!</legend>
+        <input type="submit" name="submit" value="Sign Out">
+      </fieldset>
+    </form> <br/>
+  </div>
 
-        <input type="submit" class="btn btn-default" name="submit" value="Sign up!">
-      </form> <br/>
-      <input type="submit" class="btn btn-default back-to-menu" value="Back to menu">
-    </div>
+  <div class="client-stuff">
+    <form id="add-client">
+        <legend>Add client</legend>
+        <form>
+          <input name="client[first_name]" type="text" placeholder="First Name">
+          <input name="client[family_name]" type="text" placeholder="Family Name">
+          <input name="client[born_on]" type="date" placeholder="DOB yyyy/mm/dd">
+          <input name="client[email]" type="text" placeholder="email">
+          <input type="submit" name="submit" value="Add client!">
+        </form>
+    </form>
 
-    <div class="change-pass-screen">
-      <form id="changepw">
-        <div class="form-group">
-          <label for="exampleInputPassword1">Old Password</label>
-          <input type="password" name="passwords[old]" placeholder="old password" class="form-control reset">
-        </div>
+    <form id="get-client">
+        <legend>Get client</legend>
+        <form>
+          <input name="client[id]" type="text" placeholder="Client ID">
+          <input type="submit" name="submit" value="Get client!">
+        </form>
+    </form>
 
-        <div class="form-group">
-          <label for="exampleInputPassword1">New Password</label>
-          <input type="password" name="passwords[new]" placeholder="new password" class="form-control reset">
-        </div>
+    <form id="get-client-index">
+        <legend>Get all clients</legend>
+        <form>
+          <input type="submit" name="submit" value="Get all clients!">
+        </form>
+    </form>
 
-        <input type="submit" class="btn btn-default" name="submit" value="Change password!">
-      </form> <br/>
-      <input type="submit" class="btn btn-default back-to-menu-buttons" value="Back to menu">
-    </div>
+    <form id="update-client">
+        <legend>Update client</legend>
+        <form>
+          <input name="client[id]" type="text" placeholder="Client ID">
+          <input name="client[first_name]" type="text" placeholder="First Name">
+          <input name="client[family_name]" type="text" placeholder="Family Name">
+          <input name="client[born_on]" type="date" placeholder="DOB yyyy/mm/dd">
+          <input name="client[email]" type="text" placeholder="email">
+          <input type="submit" name="submit" value="Update client!">
+        </form>
+    </form>
+
+    <form id="destroy-client">
+        <legend>Remove client</legend>
+        <form>
+          <input name="client[id]" type="text" placeholder="Client ID">
+          <input type="submit" name="submit" value="Remove client!">
+        </form>
+    </form>
+
+  </div>
+
 </body>
 
 </html>
