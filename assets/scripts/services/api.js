@@ -35,8 +35,20 @@ const getServiceIndex = (data) => {
   })
 }
 
+const updateService = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/services/' + data.service.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   addService,
   getService,
-  getServiceIndex
+  getServiceIndex,
+  updateService
 }

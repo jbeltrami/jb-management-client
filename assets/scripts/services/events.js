@@ -29,10 +29,19 @@ const onGetServiceIndex = function (event) {
     .catch(ui.getServiceIndexFailure)
 }
 
+const onUpdateService = function (event) {
+  const data = getFormFields(event.target)
+  event.preventDefault()
+  api.updateService(data)
+    .then(ui.updateServiceSuccess)
+    .catch(ui.updateServiceFailure)
+}
+
 const addHandlers = () => {
   $('#add-service').on('submit', onAddService)
   $('#get-service').on('submit', onGetService)
   $('#get-service-index').on('submit', onGetServiceIndex)
+  $('#update-service').on('submit', onUpdateService)
 }
 
 module.exports = {

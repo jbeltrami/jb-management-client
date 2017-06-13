@@ -32,11 +32,23 @@ const getServiceIndexFailure = (data) => {
   resetFields()
 }
 
+const updateServiceSuccess = (data) => {
+  console.log(data)
+  resetFields()
+}
+
+const updateServiceFailure = (data) => {
+  console.log(data)
+  resetFields()
+}
+
 module.exports = {
   addServiceSuccess,
   addServiceFailure,
   getServiceSuccess,
   getServiceFailure,
   getServiceIndexSuccess,
-  getServiceIndexFailure
+  getServiceIndexFailure,
+  updateServiceSuccess,
+  updateServiceFailure
 }
