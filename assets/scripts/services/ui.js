@@ -1,54 +1,54 @@
 'use strict'
 
-const resetFields = require('../reset-fields.js')
+// const resetFields = require('../reset-fields.js')
 
 const addServiceSuccess = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 
 const addServiceFailure = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 
 const getServiceSuccess = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 
 const getServiceFailure = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 
 const getServiceIndexSuccess = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 
 const getServiceIndexFailure = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 
 const updateServiceSuccess = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 
 const updateServiceFailure = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 const destroyServiceSuccess = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 
 const destroyServiceFailure = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 
 module.exports = {

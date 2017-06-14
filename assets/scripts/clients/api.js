@@ -47,7 +47,7 @@ const updateClient = (data) => {
 
 const destroyClient = (data) => {
   return $.ajax({
-    url: config.apiOrigin + '/clients/' + data.client.id,
+    url: config.apiOrigin + '/clients/' + data,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
