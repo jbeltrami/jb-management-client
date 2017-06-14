@@ -5,9 +5,11 @@ const config = require('./config')
 const authEvents = require('./auth/events.js')
 const clientEvents = require('./clients/events.js')
 const serviceEvents = require('./services/events.js')
+const signInScreen = require('./templates/sign-in-screen.hbs')
 
 $(() => {
   setAPIOrigin(location, config)
+  $('.render-page').append(signInScreen())
   authEvents.addHandlers()
   clientEvents.addHandlers()
   serviceEvents.addHandlers()
