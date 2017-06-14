@@ -1,6 +1,8 @@
 'use strict'
 
 // const resetFields = require('../reset-fields.js')
+const showServices = require('../templates/show-services.hbs')
+const api = require('./api.js')
 
 const addServiceSuccess = (data) => {
   console.log(data)
@@ -23,8 +25,18 @@ const getServiceFailure = (data) => {
 }
 
 const getServiceIndexSuccess = (data) => {
-  console.log(data)
-  // resetFields()
+  console.log(data.services)
+  const indexServices = showServices({
+    services: data.services
+  })
+  $('.render-page').empty()
+  $('.render-page').append(indexServices)
+  $('.destroy-service').on('click', function () {
+    $(this).parent().parent().css({
+      'display': 'none'
+    })
+    api.destroyService(this.dataset.id)
+  })
 }
 
 const getServiceIndexFailure = (data) => {

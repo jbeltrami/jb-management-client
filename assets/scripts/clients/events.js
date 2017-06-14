@@ -37,20 +37,11 @@ const onUpdateClient = function (event) {
     .catch(ui.updateClientFailure)
 }
 
-const onDestroyClient = function (event) {
-  const data = getFormFields(event.target)
-  event.preventDefault()
-  api.destroyClient(data)
-    .then(ui.destroyClientSuccess)
-    .catch(ui.destroyClientFailure)
-}
-
 const addHandlers = () => {
   $('.render-view').on('submit', '#add-client', onAddClient)
   $('.render-view').on('submit', '#get-client', onGetClient)
   $('.navbar').on('click', '#get-client-index', onGetClientIndex)
   $('.render-view').on('submit', '#update-client', onUpdateClient)
-  $('.render-view').on('submit', '#destroy-client', onDestroyClient)
 }
 
 module.exports = {

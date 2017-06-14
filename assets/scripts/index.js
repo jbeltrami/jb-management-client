@@ -6,6 +6,7 @@ const authEvents = require('./auth/events.js')
 const clientEvents = require('./clients/events.js')
 const serviceEvents = require('./services/events.js')
 const signInScreen = require('./templates/sign-in-screen.hbs')
+const dashboard = require('./templates/dashboard.hbs')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -13,6 +14,11 @@ $(() => {
   authEvents.addHandlers()
   clientEvents.addHandlers()
   serviceEvents.addHandlers()
+})
+
+$('#dashboard').on('click', function () {
+  $('.render-page').empty()
+  $('.render-page').append(dashboard)
 })
 
 // $(() => {

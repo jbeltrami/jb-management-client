@@ -1,0 +1,30 @@
+<table id="services-table" class="table">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Date of Birth</th>
+      <th>E-mail</th>
+      <th>Delete Service</th>
+      <th>Update Service</th>
+    </tr>
+ </thead>
+
+ <tbody id="services-table-body">
+   {{#each services as |service|}}
+   <tr>
+     <td>{{service.description}}</td>
+     <td>{{service.price}}</td>
+     <td>{{service.service_date}}</td>
+     <td>{{service.user.email}}</td>
+     <td>
+       <button data-id="{{service.id}}" class="btn btn-danger destroy-service">Delete Service</button>
+     </td>
+     <td>
+       <button data-id="{{service.id}}" class="btn btn-warning update-service">Update Service</button>
+     </td>
+   </tr>
+   {{/each}}
+ </tbody>
+
+</table>
