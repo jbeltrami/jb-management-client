@@ -46,11 +46,11 @@ const onDestroyClient = function (event) {
 }
 
 const addHandlers = () => {
-  $('#add-client').on('submit', onAddClient)
-  $('#get-client').on('submit', onGetClient)
-  $('#get-client-index').on('submit', onGetClientIndex)
-  $('#update-client').on('submit', onUpdateClient)
-  $('#destroy-client').on('submit', onDestroyClient)
+  $('.render-view').on('submit', '#add-client', onAddClient)
+  $('.render-view').on('submit', '#get-client', onGetClient)
+  $('.navbar').on('click', '#get-client-index', onGetClientIndex)
+  $('.render-view').on('submit', '#update-client', onUpdateClient)
+  $('.render-view').on('submit', '#destroy-client', onDestroyClient)
 }
 
 module.exports = {

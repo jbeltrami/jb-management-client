@@ -14,26 +14,37 @@
 </head>
 
 <body class="container-fluid">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <button type="button" class="btn btn-default navbar-btn" id="dashboard">Dashboard</button>
+          <button type="button" class="btn btn-default navbar-btn" id="get-client-index">Clients</button>
+          <button type="button" class="btn btn-default navbar-btn" id="get-service-index">Services</button>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <button type="button" class="btn btn-default navbar-btn" id="changepw">Change password</button>
+          <button type="button" class="btn btn-default navbar-btn" id="sign-out">Sign out</button>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
   <div class="render-page"></div>
   <!-- <div class="auth-stuff">
-    <form id="sign-up">
-      <fieldset>
-        <legend>Sign up!</legend>
-        <input name="credentials[email]" type="text" placeholder="an@example.email">
-        <input name="credentials[password]" type="password" placeholder="password">
-        <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
-        <input type="submit" name="submit" value="Sign up!">
-      </fieldset>
-    </form>
-
-    <form id="sign-in">
-      <fieldset>
-        <legend>Sign in!</legend>
-        <input name="credentials[email]" type="text" placeholder="an@example.email">
-        <input name="credentials[password]" type="password" placeholder="password">
-        <input type="submit" name="submit" value="Sign in!">
-      </fieldset>
-    </form>
 
     <form id="changepw">
       <fieldset>
@@ -43,14 +54,6 @@
         <input type="submit" name="submit" value="Change password!">
       </fieldset>
     </form>
-
-    <form id="sign-out">
-      <fieldset>
-        <legend>Sign-out!</legend>
-        <input type="submit" name="submit" value="Sign Out">
-      </fieldset>
-    </form> <br/>
-  </div>
 
   <div class="client-stuff">
     <form id="add-client">
@@ -66,11 +69,6 @@
       <legend>Get client</legend>
       <input name="client[id]" type="text" placeholder="Client ID">
       <input type="submit" name="submit" value="Get client!">
-    </form>
-
-    <form id="get-client-index">
-      <legend>Get all clients</legend>
-      <input type="submit" name="submit" value="Get all clients!">
     </form>
 
     <form id="update-client">

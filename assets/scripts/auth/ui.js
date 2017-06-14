@@ -2,46 +2,49 @@
 
 const store = require('../store.js')
 
-const resetFields = require('../reset-fields.js')
+// const resetFields = require('../reset-fields.js')
+const dashboard = require('../templates/dashboard.hbs')
 
 const signUpSuccess = (data) => {
-  resetFields()
+  // resetFields()
 }
 
 const signUpFailure = (data) => {
-  resetFields()
+  // resetFields()
 }
 
 // makes all the buttons appear.
 const signInSuccess = (data) => {
-  console.log(data)
   store.user = data.user
-  resetFields()
+  $('.navbar').css('display', 'block')
+  $('.render-page').empty()
+  $('.render-page').append(dashboard)
 }
 
 const signInFailure = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 
 const changePWSuccess = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 
 const changePWFailure = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 
 const signOutSuccess = (data) => {
   console.log(data)
-  resetFields()
+  $('.navbar').css('display', 'none')
+  // resetFields()
 }
 
 const signOutFailure = (data) => {
   console.log(data)
-  resetFields()
+  // resetFields()
 }
 
 module.exports = {

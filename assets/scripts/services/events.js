@@ -46,11 +46,11 @@ const onDestroyService = function (event) {
 }
 
 const addHandlers = () => {
-  $('#add-service').on('submit', onAddService)
-  $('#get-service').on('submit', onGetService)
-  $('#get-service-index').on('submit', onGetServiceIndex)
-  $('#update-service').on('submit', onUpdateService)
-  $('#destroy-service').on('submit', onDestroyService)
+  $('.render-view').on('submit', '#add-service', onAddService)
+  $('.render-view').on('submit', '#get-service', onGetService)
+  $('.navbar').on('click', '#get-service-index', onGetServiceIndex)
+  $('.render-view').on('submit', '#update-service', onUpdateService)
+  $('.render-view').on('submit', '#destroy-service', onDestroyService)
 }
 
 module.exports = {

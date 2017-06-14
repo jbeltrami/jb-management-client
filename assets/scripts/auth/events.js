@@ -43,22 +43,20 @@ const onSignOut = function (event) {
 const toSignIn = function () {
   $('.render-page').empty()
   $('.render-page').append(signInScreen)
-  $('#sign-in').on('submit', onSignIn)
   $('.go-to-signup').on('click', toSignUpPage)
 }
 
 const toSignUpPage = function () {
   $('.render-page').empty()
   $('.render-page').append(signUpScreen)
-  $('#sign-up').on('submit', onSignUp)
   $('.go-to-signin').on('click', toSignIn)
 }
 
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#changepw').on('submit', onChangePW)
-  $('#sign-out').on('submit', onSignOut)
+  $('.render-page').on('submit', '#sign-up', onSignUp)
+  $('.render-page').on('submit', '#sign-in', onSignIn)
+  $('.render-page').on('submit', '#changepw', onChangePW)
+  $('.navbar').on('click', '#sign-out', onSignOut)
   $('.go-to-signup').on('click', toSignUpPage)
 }
 
