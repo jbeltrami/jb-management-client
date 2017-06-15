@@ -14,10 +14,9 @@ const addService = (data) => {
   })
 }
 
-const getService = (data) => {
-  console.log(data)
+const getService = (id) => {
   return $.ajax({
-    url: config.apiOrigin + '/services/' + data.service.id,
+    url: config.apiOrigin + '/services/' + id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
