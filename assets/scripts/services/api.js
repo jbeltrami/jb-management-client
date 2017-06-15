@@ -46,14 +46,13 @@ const updateService = (data) => {
   })
 }
 
-const destroyService = (data) => {
+const destroyService = (id) => {
   return $.ajax({
-    url: config.apiOrigin + '/services/' + data.service.id,
+    url: config.apiOrigin + '/services/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data
+    }
   })
 }
 
