@@ -10,8 +10,12 @@ const onAddService = function (event) {
   const data = getFormFields(event.target)
   event.preventDefault()
   api.addService(data)
-    .then(ui.addServiceSuccess)
-    .catch(ui.addServiceFailure)
+  .then(() => {
+    api.getServiceIndex(data)
+      .then(ui.getServiceIndexSuccess)
+      .catch(ui.getServiceIndexFailure)
+  })
+  .catch(ui.addServiceFailure)
 }
 
 const onGetService = function (event) {
