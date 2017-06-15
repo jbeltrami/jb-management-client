@@ -7,6 +7,7 @@ const ui = require('./ui')
 
 const signUpScreen = require('../templates/sign-up-screen.hbs')
 const signInScreen = require('../templates/sign-in-screen.hbs')
+const changePWScreen = require('../templates/change-password.hbs')
 
 const onSignUp = function (event) {
   const data = getFormFields(event.target)
@@ -57,12 +58,18 @@ const toSignUpPage = function () {
   $('.go-to-signin').on('click', toSignIn)
 }
 
+const toChangePW = function () {
+  $('.render-page').empty()
+  $('.render-page').append(changePWScreen)
+}
+
 const addHandlers = () => {
   $('.render-page').on('submit', '#sign-up', onSignUp)
   $('.render-page').on('submit', '#sign-in', onSignIn)
   $('.render-page').on('submit', '#changepw', onChangePW)
   $('.navbar').on('click', '#sign-out', onSignOut)
   $('.go-to-signup').on('click', toSignUpPage)
+  $('.go-to-changepw').on('click', toChangePW)
 }
 
 module.exports = {
