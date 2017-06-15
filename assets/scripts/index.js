@@ -17,6 +17,7 @@ $(() => {
 })
 
 $('#dashboard').on('click', function () {
+  event.preventDefault()
   $('.render-page').empty()
   $('.render-page').append(dashboard)
 })

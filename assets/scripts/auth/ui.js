@@ -15,10 +15,8 @@ const userMessage = (message) => {
   }, 2000)
 }
 
-const signUpSuccess = (data) => {
-}
-
 const signUpFailure = (data) => {
+  userMessage('Please try again with a different e-mail.')
 }
 
 // makes all the buttons appear.
@@ -30,7 +28,7 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = (data) => {
-  console.log(data)
+  userMessage('Please try again with different credentials. Have you signed-up yet?')
 }
 
 const changePWSuccess = (data) => {
@@ -59,8 +57,6 @@ const toSignUpPage = function () {
 const signOutSuccess = (data) => {
   $('.navbar').css('display', 'none')
   toSignIn()
-  // $('.render-page').empty()
-  // $('.render-page').append(signInScreen)
 }
 
 const signOutFailure = (data) => {
@@ -68,7 +64,6 @@ const signOutFailure = (data) => {
 }
 
 module.exports = {
-  signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,

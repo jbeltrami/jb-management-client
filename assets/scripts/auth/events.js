@@ -13,7 +13,6 @@ const onSignUp = function (event) {
   const data = getFormFields(event.target)
   event.preventDefault()
   api.signUp(data)
-    .then(ui.signUpSuccess)
     .then(() => {
       api.signIn(data)
       .then(ui.signInSuccess)
@@ -47,18 +46,21 @@ const onSignOut = function (event) {
 }
 
 const toSignIn = function () {
+  event.preventDefault()
   $('.render-page').empty()
   $('.render-page').append(signInScreen)
   $('.go-to-signup').on('click', toSignUpPage)
 }
 
 const toSignUpPage = function () {
+  event.preventDefault()
   $('.render-page').empty()
   $('.render-page').append(signUpScreen)
   $('.go-to-signin').on('click', toSignIn)
 }
 
 const toChangePW = function () {
+  event.preventDefault()
   $('.render-page').empty()
   $('.render-page').append(changePWScreen)
 }
