@@ -4,12 +4,12 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
+const updateClient = require('../templates/update-client.hbs')
 
 const onAddClient = function (event) {
   const data = getFormFields(event.target)
   event.preventDefault()
   api.addClient(data)
-    .then(ui.addClientSuccess)
     .then(() => {
       api.getClientIndex(data)
         .then(ui.getClientIndexSuccess)
@@ -38,8 +38,19 @@ const onUpdateClient = function (event) {
   const data = getFormFields(event.target)
   event.preventDefault()
   api.updateClient(data)
-    .then(ui.updateClientSuccess)
+  .then(() => {
+    api.getClientIndex(data)
+      .then(ui.getClientIndexSuccess)
+      .catch(ui.getClientIndexFailure)
+  })
     .catch(ui.updateClientFailure)
+}
+
+const toUpdateClient = () => {
+  $('.render-page').empty()
+  $('.render-page').append(updateClient)
+  $('.clientId').val(event.target.dataset.id)
+  $('.clientId').css('display', 'none')
 }
 
 const addHandlers = () => {
@@ -47,6 +58,7 @@ const addHandlers = () => {
   $('.render-page').on('submit', '#get-client', onGetClient)
   $('.navbar').on('click', '#get-client-index', onGetClientIndex)
   $('.render-page').on('submit', '#update-client', onUpdateClient)
+  $('.render-page').on('click', '.update-client', toUpdateClient)
 }
 
 module.exports = {

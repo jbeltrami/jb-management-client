@@ -35,6 +35,7 @@ const getClientIndex = (data) => {
 }
 
 const updateClient = (data) => {
+  console.log('update client data is: ', data)
   return $.ajax({
     url: config.apiOrigin + '/clients/' + data.client.id,
     method: 'PATCH',
