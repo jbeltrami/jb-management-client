@@ -38,10 +38,10 @@ const onUpdateService = function (event) {
 }
 
 const addHandlers = () => {
-  $('.render-view').on('submit', '#add-service', onAddService)
-  $('.render-view').on('submit', '#get-service', onGetService)
+  $('.render-page').on('submit', '#add-service', onAddService)
+  $('.render-page').on('submit', '#get-service', onGetService)
   $('.navbar').on('click', '#get-service-index', onGetServiceIndex)
-  $('.render-view').on('submit', '#update-service', onUpdateService)
+  $('.render-page').on('submit', '#update-service', onUpdateService)
 }
 
 module.exports = {

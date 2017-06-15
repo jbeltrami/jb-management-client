@@ -1,7 +1,9 @@
 'use strict'
 
-const showClients = require('../templates/show-clients.hbs')
 const api = require('./api.js')
+const events = require('./events.js')
+const showClients = require('../templates/show-clients.hbs')
+const addClient = require('../templates/add-client.hbs')
 
 const addClientSuccess = (data) => {
   console.log(data)
@@ -19,6 +21,11 @@ const getClientFailure = (data) => {
   console.log(data)
 }
 
+const toAddClient = () => {
+  $('.render-page').empty()
+  $('.render-page').append(addClient)
+}
+
 const getClientIndexSuccess = (data) => {
   console.log(data.clients)
   const indexClients = showClients({
@@ -26,6 +33,10 @@ const getClientIndexSuccess = (data) => {
   })
   $('.render-page').empty()
   $('.render-page').append(indexClients)
+  // Render add client interface
+  $('.add-client').on('click', toAddClient)
+  $('#add-client').on('submit', events.onAddClient)
+  // Add destroy-client function based on button id that matches client id
   $('.destroy-client').on('click', function () {
     $(this).parent().parent().css({
       'display': 'none'

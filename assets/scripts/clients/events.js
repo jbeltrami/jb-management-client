@@ -10,6 +10,11 @@ const onAddClient = function (event) {
   event.preventDefault()
   api.addClient(data)
     .then(ui.addClientSuccess)
+    .then(() => {
+      api.getClientIndex(data)
+        .then(ui.getClientIndexSuccess)
+        .catch(ui.getClientIndexFailure)
+    })
     .catch(ui.addClientFailure)
 }
 
@@ -23,7 +28,6 @@ const onGetClient = function (event) {
 
 const onGetClientIndex = function (event) {
   const data = getFormFields(event.target)
-  console.log('data is: ', data)
   event.preventDefault()
   api.getClientIndex(data)
     .then(ui.getClientIndexSuccess)
@@ -39,10 +43,10 @@ const onUpdateClient = function (event) {
 }
 
 const addHandlers = () => {
-  $('.render-view').on('submit', '#add-client', onAddClient)
-  $('.render-view').on('submit', '#get-client', onGetClient)
+  $('.render-page').on('submit', '#add-client', onAddClient)
+  $('.render-page').on('submit', '#get-client', onGetClient)
   $('.navbar').on('click', '#get-client-index', onGetClientIndex)
-  $('.render-view').on('submit', '#update-client', onUpdateClient)
+  $('.render-page').on('submit', '#update-client', onUpdateClient)
 }
 
 module.exports = {

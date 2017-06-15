@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>JB Management</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags unless you know what you are doing -->
@@ -29,14 +29,14 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <button type="button" class="btn btn-default navbar-btn" id="dashboard">Dashboard</button>
-          <button type="button" class="btn btn-default navbar-btn" id="get-client-index">Clients</button>
-          <button type="button" class="btn btn-default navbar-btn" id="get-service-index">Services</button>
+          <button type="button" class="btn  btn-sm btn-default navbar-btn" id="dashboard">Dashboard</button>
+          <button type="button" class="btn  btn-sm btn-default navbar-btn" id="get-client-index">Clients</button>
+          <button type="button" class="btn  btn-sm btn-default navbar-btn" id="get-service-index">Services</button>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <button type="button" class="btn btn-default navbar-btn go-to-changepw">Change password</button>
-          <button type="button" class="btn btn-default navbar-btn" id="sign-out">Sign out</button>
+          <button type="button" class="btn  btn-sm btn-default navbar-btn  go-to-changepw">Change password</button>
+          <button type="button" class="btn  btn-sm btn-default navbar-btn" id="sign-out">Sign out</button>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -45,17 +45,6 @@
   </nav>
   <div class="render-page"></div>
   <!-- <div class="auth-stuff">
-
-  <div class="client-stuff">
-    <form id="add-client">
-      <legend>Add client</legend>
-      <input name="client[first_name]" type="text" placeholder="First Name">
-      <input name="client[family_name]" type="text" placeholder="Family Name">
-      <input name="client[born_on]" type="date" placeholder="DOB yyyy/mm/dd">
-      <input name="client[email]" type="text" placeholder="email">
-      <input type="submit" name="submit" value="Add client!">
-    </form>
-
     <form id="get-client">
       <legend>Get client</legend>
       <input name="client[id]" type="text" placeholder="Client ID">
