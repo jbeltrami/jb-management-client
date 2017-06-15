@@ -19,13 +19,13 @@
      <td>{{client.born_on}}</td>
      <td>{{client.email}}</td>
      <td>
-       <button data-id="{{client.id}}" class="btn btn-danger destroy-client">Delete Client</button>
+       <button data-id="{{client.id}}" class="btn btn-sm btn-danger destroy-client">Delete Client</button>
      </td>
      <td>
-       <button data-id="{{client.id}}" class="btn btn-warning update-client">Update Client</button>
+       <button data-id="{{client.id}}" class="btn btn-sm btn-warning update-client">Update Client</button>
      </td>
      <td>
-       <button data-id="{{client.id}}" class="btn btn-success create-service">Add Service</button>
+       <button data-id="{{client.id}}" class="btn btn-sm btn-success create-service">Add Service</button>
      </td>
    </tr>
    {{/each}}
@@ -33,4 +33,4 @@
 
 </table>
 
-<button class="btn btn-default">Add client</button>
+<button class="btn btn-sm btn-default add-client">Add client</button>

@@ -23,6 +23,7 @@ const onGetClient = function (event) {
 
 const onGetClientIndex = function (event) {
   const data = getFormFields(event.target)
+  console.log('data is: ', data)
   event.preventDefault()
   api.getClientIndex(data)
     .then(ui.getClientIndexSuccess)
