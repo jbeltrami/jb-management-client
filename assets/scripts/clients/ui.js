@@ -6,19 +6,19 @@ const addClient = require('../templates/add-client.hbs')
 const updateClient = require('../templates/update-client.hbs')
 
 const addClientSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const addClientFailure = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const getClientSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const getClientFailure = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const toAddClient = () => {
@@ -27,7 +27,7 @@ const toAddClient = () => {
 }
 
 const getClientIndexSuccess = (data) => {
-  console.log(data.clients)
+  // console.log(data.clients)
   const indexClients = showClients({
     clients: data.clients
   })
@@ -45,27 +45,27 @@ const getClientIndexSuccess = (data) => {
 }
 
 const getClientIndexFailure = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const updateClientSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const updateClientFailure = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const destroyClientSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const destroyClientFailure = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const toUpdateClientSuccess = (data) => {
-  console.log(data.client)
+  // console.log(data.client)
   $('.render-page').empty()
   $('.render-page').append(updateClient)
   $('.clientId').val(data.client.id)

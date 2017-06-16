@@ -41,7 +41,7 @@ const changePWSuccess = (data) => {
 }
 
 const changePWFailure = (data) => {
-  console.log(data)
+  // console.log(data)
   userMessage('Changing password failed. Please, try again.')
 }
 
@@ -63,7 +63,7 @@ const signOutSuccess = (data) => {
 }
 
 const signOutFailure = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 module.exports = {
