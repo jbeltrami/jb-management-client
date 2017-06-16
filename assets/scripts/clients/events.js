@@ -4,7 +4,6 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
-const updateClient = require('../templates/update-client.hbs')
 
 const onAddClient = function (event) {
   const data = getFormFields(event.target)
@@ -46,11 +45,12 @@ const onUpdateClient = function (event) {
     .catch(ui.updateClientFailure)
 }
 
-const toUpdateClient = () => {
-  $('.render-page').empty()
-  $('.render-page').append(updateClient)
-  $('.clientId').val(event.target.dataset.id)
-  $('.clientId').css('display', 'none')
+const toUpdateClient = function (event) {
+  const data = getFormFields(event.target)
+  event.preventDefault()
+  api.getClient(data)
+    .then(ui.toUpdateClientSuccess)
+    .catch(ui.toUpdateClientFailure)
 }
 
 const addHandlers = () => {
