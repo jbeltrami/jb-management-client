@@ -1,10 +1,10 @@
 <table id="clients-table" class="table">
   <thead>
     <tr>
+      <th>E-mail</th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Date of Birth</th>
-      <th>E-mail</th>
       <th>Delete Client</th>
       <th>Update Client</th>
       <th>Add Service</th>
@@ -14,10 +14,10 @@
  <tbody id="clients-table-body">
    {{#each clients as |client|}}
    <tr>
+     <td>{{client.email}}</td>
      <td>{{client.first_name}}</td>
      <td>{{client.family_name}}</td>
      <td>{{client.born_on}}</td>
-     <td>{{client.email}}</td>
      <td>
        <button data-id="{{client.id}}" class="btn btn-sm btn-danger destroy-client">Delete Client</button>
      </td>

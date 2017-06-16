@@ -66,6 +66,14 @@ const toUpdateService = () => {
       $('.clientId').css('display', 'none')
       $('.serviceId').css('display', 'none')
     })
+    .catch(console.error())
+}
+
+const onGetRecentServices = () => {
+  event.preventDefault()
+  api.getServiceIndex()
+    .then(ui.getRecentServicesSuccess)
+    .catch(ui.getRecentServicesFailure)
 }
 
 const addHandlers = () => {
@@ -75,6 +83,7 @@ const addHandlers = () => {
   $('.render-page').on('submit', '#update-service', onUpdateService)
   $('.render-page').on('click', '.add-service', toAddService)
   $('.render-page').on('click', '.update-service', toUpdateService)
+  $('#dashboard').on('click', onGetRecentServices)
 }
 
 module.exports = {

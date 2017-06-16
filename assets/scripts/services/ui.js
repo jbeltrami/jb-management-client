@@ -1,6 +1,7 @@
 'use strict'
 
 const showServices = require('../templates/show-services.hbs')
+const recentServices = require('../templates/recent-services.hbs')
 const api = require('./api.js')
 
 const addServiceSuccess = (data) => {
@@ -20,7 +21,6 @@ const getServiceFailure = (data) => {
 }
 
 const getServiceIndexSuccess = (data) => {
-  console.log(data.services)
   const indexServices = showServices({
     services: data.services
   })
@@ -53,6 +53,19 @@ const destroyServiceFailure = (data) => {
   console.log(data)
 }
 
+const getRecentServicesSuccess = (data) => {
+  const sortedArray = data.services.sort().slice(0, 4)
+  console.log('sortedArray is: ', sortedArray)
+  const recentIndexServices = recentServices({
+    services: data.services
+  })
+  $('.recent-services-table').empty()
+  $('.recent-services-table').append(recentIndexServices)
+}
+const getRecentServicesFailure = (data) => {
+  console.log(data)
+}
+
 module.exports = {
   addServiceSuccess,
   addServiceFailure,
@@ -63,5 +76,7 @@ module.exports = {
   updateServiceSuccess,
   updateServiceFailure,
   destroyServiceSuccess,
-  destroyServiceFailure
+  destroyServiceFailure,
+  getRecentServicesSuccess,
+  getRecentServicesFailure
 }

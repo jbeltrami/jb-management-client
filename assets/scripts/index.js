@@ -7,6 +7,7 @@ const clientEvents = require('./clients/events.js')
 const serviceEvents = require('./services/events.js')
 const signInScreen = require('./templates/sign-in-screen.hbs')
 const dashboard = require('./templates/dashboard.hbs')
+const recentServicesTable = require('./templates/recent-services.hbs')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -20,6 +21,7 @@ $('#dashboard').on('click', function () {
   event.preventDefault()
   $('.render-page').empty()
   $('.render-page').append(dashboard)
+  $('.recent-services-table').append(recentServicesTable)
 })
 
 // $(() => {

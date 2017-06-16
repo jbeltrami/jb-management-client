@@ -5,6 +5,7 @@ const store = require('../store.js')
 const dashboard = require('../templates/dashboard.hbs')
 const signUpScreen = require('../templates/sign-up-screen.hbs')
 const signInScreen = require('../templates/sign-in-screen.hbs')
+const recentServicesTable = require('../templates/recent-services.hbs')
 
 // Functions to handle responses
 const userMessage = (message) => {
@@ -25,6 +26,7 @@ const signInSuccess = (data) => {
   $('.navbar').css('display', 'block')
   $('.render-page').empty()
   $('.render-page').append(dashboard)
+  $('.recent-services-table').append(recentServicesTable)
 }
 
 const signInFailure = (data) => {
@@ -34,6 +36,7 @@ const signInFailure = (data) => {
 const changePWSuccess = (data) => {
   $('.render-page').empty()
   $('.render-page').append(dashboard)
+  $('.recent-services-table').append(recentServicesTable)
   userMessage('Password changed!')
 }
 

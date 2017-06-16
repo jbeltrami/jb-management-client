@@ -8,6 +8,8 @@ const ui = require('./ui')
 const signUpScreen = require('../templates/sign-up-screen.hbs')
 const signInScreen = require('../templates/sign-in-screen.hbs')
 const changePWScreen = require('../templates/change-password.hbs')
+const servicesUi = require('../services/ui.js')
+const servicesApi = require('../services/api.js')
 
 const onSignUp = function (event) {
   const data = getFormFields(event.target)
@@ -26,6 +28,12 @@ const onSignIn = function (event) {
   event.preventDefault()
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(() => {
+      servicesApi.getServiceIndex(data)
+      .then(servicesUi.getRecentServicesSuccess)
+      .catch(servicesUi.getServiceIndexFailure)
+    })
+
     .catch(ui.signInFailure)
 }
 

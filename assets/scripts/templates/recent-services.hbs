@@ -1,0 +1,24 @@
+<table id="recent-services-table" class="table">
+  <thead>
+    <tr>
+      <th>Client's E-mail</th>
+      <th>Service Description</th>
+      <th>Price</th>
+      <th>Date</th>
+    </tr>
+ </thead>
+
+ <tbody id="recent-services-table-body">
+   {{#each services as |service|}}
+    {{!-- {{#if @index < 5}} --}}
+   <tr>
+     <td>{{service.user.email}}</td>
+     <td>{{service.description}}</td>
+     <td>{{service.price}}</td>
+     <td>{{service.service_date}}</td>
+   </tr>
+    {{!-- {{/if}} --}}
+   {{/each}}
+ </tbody>
+
+</table>
