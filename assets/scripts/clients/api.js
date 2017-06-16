@@ -14,9 +14,10 @@ const addClient = (data) => {
   })
 }
 
-const getClient = (data) => {
+const getClient = (id) => {
+  // console.log(id)
   return $.ajax({
-    url: config.apiOrigin + '/clients/' + data.client.id,
+    url: config.apiOrigin + '/clients/' + event.target.dataset.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -35,7 +36,7 @@ const getClientIndex = (data) => {
 }
 
 const updateClient = (data) => {
-  console.log('update client data is: ', data)
+  // console.log('update client data is: ', data)
   return $.ajax({
     url: config.apiOrigin + '/clients/' + data.client.id,
     method: 'PATCH',

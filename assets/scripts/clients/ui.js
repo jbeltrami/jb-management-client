@@ -3,21 +3,22 @@
 const api = require('./api.js')
 const showClients = require('../templates/show-clients.hbs')
 const addClient = require('../templates/add-client.hbs')
+const updateClient = require('../templates/update-client.hbs')
 
 const addClientSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const addClientFailure = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const getClientSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const getClientFailure = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const toAddClient = () => {
@@ -26,7 +27,7 @@ const toAddClient = () => {
 }
 
 const getClientIndexSuccess = (data) => {
-  console.log(data.clients)
+  // console.log(data.clients)
   const indexClients = showClients({
     clients: data.clients
   })
@@ -44,23 +45,35 @@ const getClientIndexSuccess = (data) => {
 }
 
 const getClientIndexFailure = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const updateClientSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const updateClientFailure = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const destroyClientSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const destroyClientFailure = (data) => {
-  console.log(data)
+  // console.log(data)
+}
+
+const toUpdateClientSuccess = (data) => {
+  // console.log(data.client)
+  $('.render-page').empty()
+  $('.render-page').append(updateClient)
+  $('.clientId').val(data.client.id)
+  $('.clientId').css('display', 'none')
+  $('.first_name').val(data.client.first_name)
+  $('.family_name').val(data.client.family_name)
+  $('.born_on').val(data.client.born_on)
+  $('.email').val(data.client.email)
 }
 
 module.exports = {
@@ -73,5 +86,6 @@ module.exports = {
   updateClientSuccess,
   updateClientFailure,
   destroyClientSuccess,
-  destroyClientFailure
+  destroyClientFailure,
+  toUpdateClientSuccess
 }
