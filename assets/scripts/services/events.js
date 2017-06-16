@@ -65,6 +65,9 @@ const toUpdateService = () => {
       $('.clientId').val(value.service.client.id)
       $('.clientId').css('display', 'none')
       $('.serviceId').css('display', 'none')
+      $('.service_description').val(value.service.description)
+      $('.service_date').val(value.service.service_date)
+      $('.price').val(value.service.price)
     })
     .catch(console.error())
 }
