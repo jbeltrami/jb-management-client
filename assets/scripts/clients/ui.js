@@ -5,12 +5,21 @@ const showClients = require('../templates/show-clients.hbs')
 const addClient = require('../templates/add-client.hbs')
 const updateClient = require('../templates/update-client.hbs')
 
+// Functions to handle responses
+const userMessage = (message) => {
+  $('#temp-message').text(message)
+  $('#temp-message').show()
+  setTimeout(function () {
+    $('#temp-message').hide()
+  }, 2000)
+}
+
 const addClientSuccess = (data) => {
   // console.log(data)
 }
 
 const addClientFailure = (data) => {
-  // console.log(data)
+  userMessage('This e-mail is already taken. Please try a different one.')
 }
 
 const getClientSuccess = (data) => {
