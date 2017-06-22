@@ -1,10 +1,10 @@
 <form id="update-client">
   <legend>Update client</legend>
-  <input class="form-control clientId"name="client[id]" type="text" placeholder="Client ID">
-  <span>First Name</span><input class="form-control first_name"name="client[first_name]" type="text" placeholder="First Name">
-  <span>Last Name</span><input class="form-control family_name"name="client[family_name]" type="text" placeholder="Family Name">
-  <span>DOB</span><input class="form-control born_on"name="client[born_on]" type="date" placeholder="DOB yyyy/mm/dd">
-  <span>E-mail</span><input class="form-control email"name="client[email]" type="text" placeholder="email">
+  <input class="form-control clientId"name="client[id]" type="text" placeholder="Client ID" required="true">
+  <span>First Name</span><input class="form-control first_name"name="client[first_name]" type="text" placeholder="First Name" required="true" autofocus>
+  <span>Last Name</span><input class="form-control family_name"name="client[family_name]" type="text" placeholder="Family Name" required="true" autofocus>
+  <span>DOB</span><input class="form-control born_on"name="client[born_on]" type="date" placeholder="DOB yyyy/mm/dd" required="true" autofocus>
+  <span>E-mail</span><input class="form-control email"name="client[email]" type="email" placeholder="email" required="true" autofocus>
 
   <input class="btn btn-md btn-success btn-block" type="submit" name="submit" value="Update client!">
 </form>

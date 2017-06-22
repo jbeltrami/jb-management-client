@@ -1,8 +1,8 @@
 <form id="add-service">
   <legend>Add service</legend>
-  <input class="form-control clientId"name="service[client_id]" type="text" placeholder="Client ID">
-  <span>Service description</span><textarea class="form-control" name="service[description]" type="text" placeholder="Service description" rows='7'></textarea>
-  <span>Service date</span><input class="form-control"name="service[service_date]" type="date" placeholder="Date of the service">
-  <span>Price</span><input class="form-control"name="service[price]" type="number" step='0.10' placeholder="Service Price">
+  <input class="form-control clientId"name="service[client_id]" type="text" required="true" placeholder="Client ID">
+  <span>Service description</span><textarea class="form-control" name="service[description]" type="text" required="true" placeholder="Service description" rows='7' autofocus></textarea>
+  <span>Service date</span><input class="form-control"name="service[service_date]" type="date" required="true" placeholder="Date of the service" autofocus>
+  <span>Price</span><input class="form-control"name="service[price]" type="number" step='0.10' required="true" placeholder="Service Price" autofocus>
   <input type="submit" name="submit" value="Add service!">
 </form>

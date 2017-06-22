@@ -1,8 +1,8 @@
 <form id="add-client">
   <legend>Add client</legend>
-  <span>Family Name</span><input class="form-control" name="client[family_name]" type="text" placeholder="Family Name">
-  <span>First Name</span><input class="form-control" name="client[first_name]" type="text" placeholder="First Name">
-  <span>DOB</span><input class="form-control" name="client[born_on]" type="date" placeholder="DOB yyyy/mm/dd">
-  <span>Email</span><input class="form-control" name="client[email]" type="text" placeholder="email">
+  <span>Family Name</span><input class="form-control" name="client[family_name]" type="text" required="true" placeholder="Family Name" autofocus>
+  <span>First Name</span><input class="form-control" name="client[first_name]" type="text" required="true" placeholder="First Name" autofocus>
+  <span>DOB</span><input class="form-control" name="client[born_on]" type="date" required="true" placeholder="DOB yyyy/mm/dd" autofocus>
+  <span>Email</span><input class="form-control" name="client[email]" type="email" required="true" placeholder="email" autofocus>
   <input class="btn btn-md btn-success btn-block" type="submit" name="submit" value="Add client!">
 </form>
