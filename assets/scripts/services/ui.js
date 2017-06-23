@@ -27,10 +27,12 @@ const getServiceIndexSuccess = (data) => {
   $('.render-page').empty()
   $('.render-page').append(indexServices)
   $('.destroy-service').on('click', function () {
-    $(this).parent().parent().css({
-      'display': 'none'
-    })
-    api.destroyService(this.dataset.id)
+    if (window.confirm('Do you really want to delete this record?')) {
+      $(this).parent().parent().css({
+        'display': 'none'
+      })
+      api.destroyService(this.dataset.id)
+    }
   })
 }
 

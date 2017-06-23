@@ -46,10 +46,12 @@ const getClientIndexSuccess = (data) => {
   $('.add-client').on('click', toAddClient)
   // Add destroy-client function based on button id that matches client id
   $('.destroy-client').on('click', function () {
-    $(this).parent().parent().css({
-      'display': 'none'
-    })
-    api.destroyClient(this.dataset.id)
+    if (window.confirm('Do you really want to delete this client?')) {
+      $(this).parent().parent().css({
+        'display': 'none'
+      })
+      api.destroyClient(this.dataset.id)
+    }
   })
 }
 
