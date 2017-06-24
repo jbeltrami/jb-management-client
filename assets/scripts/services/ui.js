@@ -68,6 +68,26 @@ const getRecentServicesFailure = (data) => {
   // console.log(data)
 }
 
+const toFilteredServiceSuccess = (data) => {
+  const indexServices = showServices({
+    services: data
+  })
+  $('.render-page').empty()
+  $('.render-page').append(indexServices)
+  $('.destroy-service').on('click', function () {
+    if (window.confirm('Do you really want to delete this record?')) {
+      $(this).parent().parent().css({
+        'display': 'none'
+      })
+      api.destroyService(this.dataset.id)
+    }
+  })
+}
+
+const toFilteredServiceFailure = (data) => {
+
+}
+
 module.exports = {
   addServiceSuccess,
   addServiceFailure,
@@ -80,5 +100,7 @@ module.exports = {
   destroyServiceSuccess,
   destroyServiceFailure,
   getRecentServicesSuccess,
-  getRecentServicesFailure
+  getRecentServicesFailure,
+  toFilteredServiceSuccess,
+  toFilteredServiceFailure
 }

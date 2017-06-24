@@ -13,7 +13,7 @@
  <tbody id="services-table-body">
    {{#each services as |service|}}
    <tr>
-     <td>{{service.client.email}}</td>
+     <td><a href="" data-email="{{service.client.email}}" class="individual-services">{{service.client.email}}</a></td>
      <td>{{service.description}}</td>
      <td>{{service.price}}</td>
      <td>{{service.service_date}}</td>

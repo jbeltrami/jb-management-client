@@ -72,6 +72,17 @@ const toUpdateService = () => {
     .catch(console.error())
 }
 
+const toFilteredService = (event) => {
+  const data = event.target.dataset.email
+  event.preventDefault()
+  api.getServiceIndex()
+    .then(value => value.services.filter((e) => {
+      return e.client.email === data
+    }))
+    .then(ui.toFilteredServiceSuccess)
+    .catch(ui.toFilteredServiceFailure)
+}
+
 const onGetRecentServices = () => {
   event.preventDefault()
   api.getServiceIndex()
@@ -87,6 +98,7 @@ const addHandlers = () => {
   $('.render-page').on('click', '.add-service', toAddService)
   $('.render-page').on('click', '.update-service', toUpdateService)
   $('#dashboard').on('click', onGetRecentServices)
+  $('.render-page').on('click', '.individual-services', toFilteredService)
 }
 
 module.exports = {
