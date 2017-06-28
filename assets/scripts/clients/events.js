@@ -53,7 +53,18 @@ const toUpdateClient = function (event) {
     .catch(ui.toUpdateClientFailure)
 }
 
+const searchFunction = () => {
+  $.each($('tr'), function (i, val) {
+    if ($(val).text().indexOf($('#search-client').val()) == -1) {
+      $('tr').eq(i).hide()
+    } else {
+      $('tr').eq(i).show()
+    }
+  })
+}
+
 const addHandlers = () => {
+  $('.render-page').on('keyup', '#search-client', searchFunction)
   $('.render-page').on('submit', '#add-client', onAddClient)
   $('.render-page').on('submit', '#get-client', onGetClient)
   $('.navbar').on('click', '#get-client-index', onGetClientIndex)
